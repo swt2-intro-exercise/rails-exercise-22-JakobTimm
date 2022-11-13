@@ -2,7 +2,8 @@
 
 <%= form_with scope: :author, url: authors_path, local: true do |form| %>
     <% if @author.errors.any? %>
-        <% @authors.errors.full_messages.each do |message| %>
+        <h2>Errors</h2>
+        <% @author.errors.full_messages.each do |message| %>
             <p><%= message %></p>
         <% end %>
         
