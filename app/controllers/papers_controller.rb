@@ -54,6 +54,6 @@ class PapersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def paper_params
-      params.require(:paper).permit(:title, :venue, :year, :author_ids => [])
+      params.require(:paper).permit(:title, :venue, :year, :authors => [])
     end
 end
