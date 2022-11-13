@@ -1,0 +1,28 @@
+<p>Edit author</p>
+
+<%= form_with(model: @author, local: true) do |form| %>
+    <% if @author.errors.any? %>
+        <h2>Errors</h2>
+        <% @author.errors.full_messages.each do |message| %>
+            <p><%= message %></p>
+        <% end %>
+        
+    <% end %>
+    <p>
+        <%= form.label :first_name %><br>
+        <%= form.text_field :first_name %>
+    </p>
+    <p>
+        <%= form.label :last_name %><br>
+        <%= form.text_field :last_name %>
+    </p>
+    <p>
+        <%= form.label :homepage %><br>
+        <%= form.text_field :homepage %>
+    </p>
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>
+
+<%= link_to 'Back', authors_path %>
