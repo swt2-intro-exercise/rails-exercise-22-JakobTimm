@@ -4,6 +4,7 @@ class AuthorsController < ApplicationController
   end
 
   def new
+    @author = Author.new
   end
 
   def index
@@ -13,8 +14,10 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new(author_params)
    
-    @author.save
-    redirect_to @author
+    if @author.save
+      redirect_to @author
+    else
+      render "new"
   end
 
   private

@@ -1,6 +1,12 @@
 <p>Test authors page.</p>
 
 <%= form_with scope: :author, url: authors_path, local: true do |form| %>
+    <% if @authors.error.any? %>
+        <% @authors.errors.full_messages.each do |message| %>
+            <p><%= message %></p>
+        <% end %>
+        
+    <% end %>
     <p>
         <%= form.label :first_name %><br>
         <%= form.text_field :first_name %>
