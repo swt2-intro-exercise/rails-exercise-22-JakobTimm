@@ -18,6 +18,7 @@ class AuthorsController < ApplicationController
       redirect_to @author
     else
       render "new"
+    end
   end
 
   private

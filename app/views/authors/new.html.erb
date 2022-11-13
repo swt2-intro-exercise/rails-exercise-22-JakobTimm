@@ -1,7 +1,7 @@
 <p>Test authors page.</p>
 
 <%= form_with scope: :author, url: authors_path, local: true do |form| %>
-    <% if @authors.error.any? %>
+    <% if @author.errors.any? %>
         <% @authors.errors.full_messages.each do |message| %>
             <p><%= message %></p>
         <% end %>
